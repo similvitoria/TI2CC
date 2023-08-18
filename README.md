@@ -1,6 +1,6 @@
 # 🚀 Repositório de TI2CC
 
-> Este é um repositório que contêm todos os trabalhos e exercícios pedidos na matéria de trabalho interdisciplinar 2.
+> Este é um repositório que contêm todos os trabalhos e exercícios pedidos na matéria de trabalho interdisciplinar 2 back-end.
 
 ### ☕ O semestre
 
@@ -8,7 +8,7 @@ O semestre ainda ainda tá rolando e novas atualizações serão voltadas nas se
 
 - [x] Integração Git
 - [x] Integração Postgres
-- [ ] Ingreção Sparks
+- [ ] Integração Sparks
 - [ ] Computação em núvem
 - [ ] YourShelf(projeto final)
 
