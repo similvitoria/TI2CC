@@ -12,3 +12,8 @@ O semestre ainda ainda tá rolando e novas atualizações serão voltadas nas se
 - [ ] Computação em núvem
 - [ ] YourShelf(projeto final)
 
+### 💻 Tecnologias utilizadas
+
+- Java
+- Maven
+- Postgres
