@@ -10,7 +10,9 @@ O semestre ainda ainda tá rolando e novas atualizações serão voltadas nas se
 - [x] Integração Postgres
 - [ ] Integração Sparks
 - [ ] Computação em núvem
-- [ ] YourShelf(projeto final)
+- [ ] YourShelf- Front-End
+- [ ] YourShelf- Back-End
+- [ ] YourShelf- Projeto Final
 
 ### 💻 Tecnologias utilizadas
 
