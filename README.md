@@ -4,7 +4,7 @@
 
 ### ☕ O semestre
 
-O semestre ainda ainda tá rolando e novas atualizações serão voltadas nas seguintes tarefas:
+O semestre ainda ainda tá rolando e novas atualizações serão voltadas para as seguintes tarefas:
 
 - [x] Integração Git
 - [x] Integração Postgres
