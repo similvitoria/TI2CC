@@ -1,4 +1,4 @@
-package com.ti2cc.dao;
+package ti2cc.dao;
 
 import java.sql.*;
 import java.security.*;
@@ -7,7 +7,7 @@ import java.math.*;
 public class DAO {
     //connection
     protected Connection conexao;
-    
+
     //empty constructor
     public DAO() {
         conexao = null;
@@ -15,6 +15,7 @@ public class DAO {
 
     //start connection using postgres 'ti2cc' user infos
     public boolean conectar() {
+        //data
         String driverName = "org.postgresql.Driver";                    
 		String serverName = "localhost";
 		String mydatabase = "postgres";
@@ -39,21 +40,23 @@ public class DAO {
 		return status;
     }
 
-    //close conection and return status
+    //close connection and return status
     public boolean close() {
-		boolean status = false;
-		
-		try {
-			conexao.close();
-			status = true;
-		} catch (SQLException e) {
-			System.err.println(e.getMessage());
-		}
-		return status;
-	}
-	
-	
-	public static String toMD5(String senha) throws Exception {
+        //data
+        boolean status = false;
+
+        try{
+            conexao.close();
+            status = true;
+        }
+        catch(SQLException e) {
+            System.err.println(e.getMessage());
+        }
+
+        return status;
+    }
+
+    public static String toMD5(String senha) throws Exception {
 		MessageDigest m=MessageDigest.getInstance("MD5");
 		m.update(senha.getBytes(),0, senha.length());
 		return new BigInteger(1,m.digest()).toString(16);
