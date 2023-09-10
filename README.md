@@ -19,3 +19,4 @@ O semestre ainda ainda tá rolando e novas atualizações serão voltadas para a
 - Java
 - Maven
 - Postgres
+- spark
