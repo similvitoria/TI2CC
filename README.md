@@ -8,7 +8,7 @@ O semestre ainda ainda tá rolando e novas atualizações serão voltadas para a
 
 - [x] Integração Git
 - [x] Integração Postgres
-- [ ] Integração Sparks
+- [x] Integração Spark
 - [ ] Computação em núvem
 - [ ] YourShelf- Front-End
 - [ ] YourShelf- Back-End
