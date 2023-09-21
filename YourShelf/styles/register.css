@@ -128,6 +128,11 @@ input:focus {
     background-color: #852f80;
 }
 
+.password_req {
+    display: none;
+    font-size: 10px;
+}
+
 .foot  {
     margin-top: 1.5rem;
     font-size: 12px;

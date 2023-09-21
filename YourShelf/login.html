@@ -27,20 +27,20 @@
                 <p>Ainda não tem uma conta? <a href="register.html"><span class="sign-up" id="underlined-text"> Sign up</span></a></p>
             </div>
             <div class="form">
-                <form id="form" action="#">
+                <form id="form" action="/login" method="post">
                     <div class="form-input">
-                        <input type="text" value="Email">
+                        <input type="text" value="Email" id="email">
                         <p id="warn">Não pode estar vazio</p>
                     </div>
                     <div class="form-input">
-                        <input type="text" value="Senha">
+                        <input type="text" value="Senha" id="senha">
                         <p id="warn">Não pode estar vazio</p>
                     </div>
                     <div class="form-password">
                         <span class="forgot-password">Esqueceu sua senha?</span>
                     </div>
                     <div class="form-button">
-                        <button>Login</button>
+                        <button type="submit">Login</button>
                     </div>
                 </form>
             </div>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/register.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/home.css">
+    <title>YourShelf - Home</title>
+</head>
+<body>
+   <div class="container">
+    <div class="container-menu">
+        <div class="menu-user">
+            <div class="user" onclick="showMenu()">
+                <p>VA</p>
+            </div>
+            <div class="list" id="list">
+                <li><a href="list.html">Minhas Listas</a></li>
+                <li>Minhas conta</li>
+            </div>
+        </div>
+            <div class="search-bar">
+                <input id="book" type="text" value="buscar livro">
+                <button onclick="getBook()">buscar</button>
+            </div>
+        <div class="menu-logo">
+            <span>yourshelf.</span>
+        </div>
+    </div>
+    <div class="container-heading">
+        <div class="heading-text">
+            <div class="text">
+                <span class="title"> Olá Vitória!</span>
+                <br><span class="title"> O que você vai </span>
+                <span class="title" id="colored-text"> ler </span>
+                <span class="title"> hoje?</span>
+            </div>
+            <div id="book-info" class="book-info">
+                <div class="book-info-img">
+                    <img src="images/doutorSono.png" alt="doutor sono capa">
+                    <h3>Nos Trendings</h3>
+                </div>
+                <div class="book-info-text">
+                    <p>YourShelf Indica</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    </p>
+                    <div class="book-info-seemore">
+                        <div class="book-names">
+                            <span class="book-name">Doutor Sono</span>
+                            <span class="author">Stephen King</span> 
+                        </div>
+                        <button>ver mais</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="heading-image">
+            <img src="images/Interior set with armchair, bookcase, and floor lamp(1).png" alt="">
+        </div>
+    </div>
+    <div class="trendings">
+        <div class="book-trending">
+            <img src="images/tortoarado 1.png" alt="torto arado capa">
+            <span class="book-name-trending">Torto Arado</span>
+            <span class="author-trending">Itamar Vieira Junior</span> 
+        </div>
+        <div class="book-trending">
+            <img src="images/tortoarado 1.png" alt="torto arado capa">
+            <span class="book-name-trending">Torto Arado</span>
+            <span class="author-trending">Itamar Vieira Junior</span> 
+        </div>
+        <div class="book-trending">
+            <img src="images/tortoarado 1.png" alt="torto arado capa">
+            <span class="book-name-trending">Torto Arado</span>
+            <span class="author-trending">Itamar Vieira Junior</span> 
+        </div>
+        <div class="book-trending">
+            <img src="images/tortoarado 1.png" alt="torto arado capa">
+            <span class="book-name-trending">Torto Arado</span>
+            <span class="author-trending">Itamar Vieira Junior</span> 
+        </div>
+        <div class="book-trending">
+            <img src="images/tortoarado 1.png" alt="torto arado capa">
+            <span class="book-name-trending">Torto Arado</span>
+            <span class="author-trending">Itamar Vieira Junior</span> 
+        </div>
+    </div>
+   </div> 
+   <script>
+        function showMenu() {
+            const menu = document.getElementById("list");
+
+            if ( menu.style.display == 'none') {
+                list.style.display = 'flex';
+            }
+            else {
+                list.style.display = 'none';
+            }
+        }
+   </script>
+</body>
+</html>
