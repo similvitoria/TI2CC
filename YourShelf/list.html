@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet" href="styles/home.css">
     <link rel="stylesheet" href="styles/list.css">
+    <link rel="stylesheet" href="styles/detail.css">
     <title>Document</title>
 </head>
+
 <body>
     <div class="container">
         <div class="container-menu">
@@ -20,10 +23,10 @@
                     <li>Minhas conta</li>
                 </div>
             </div>
-                <div class="search-bar">
-                    <input id="book" type="text" value="buscar livro">
-                    <button onclick="getBook()">buscar</button>
-                </div>
+            <div class="search-bar">
+                <input id="book" type="text" value="buscar livro">
+                <button onclick="getBook()">buscar</button>
+            </div>
             <div class="menu-logo">
                 <span>yourshelf.</span>
             </div>
@@ -35,42 +38,54 @@
                     <img class="plus" src="images/Plus.svg" alt="plus">
                 </div>
                 <div class="content-list-lists">
-                    <div class="list-book">
-                        <div class="lists-cover">
-                            <img src="images/tortoarado 1.png" alt="">
+                    <button id="lista-butao"><a href="detail.html">
+                        <div class="list-book">
+                            <div class="lists-cover">
+                                <img src="images/tortoarado 1.png" alt="">
+                            </div>
+                            <div class="lists-text">
+                                <p class="title">Infância</p>
+                                <p class="list-owner">por Vitória Araújo</p>
+                            </div>
                         </div>
-                        <div class="lists-text">
-                            <p class="title">Infância</p>
-                            <p class="list-owner">por Vitória Araújo</p>
+                    </a>
+                    </button>
+                    <button id="lista-butao"><a href="detail.html">
+                        <div class="list-book">
+                            <div class="lists-cover">
+                                <img src="images/tortoarado 1.png" alt="">
+                            </div>
+                            <div class="lists-text">
+                                <p class="title">Infância</p>
+                                <p class="list-owner">por Vitória Araújo</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="list-book">
-                        <div class="lists-cover">
-                            <img src="images/tortoarado 1.png" alt="">
+                    </a>
+                    </button>
+                    <button id="lista-butao"><a href="detail.html">
+                        <div class="list-book">
+                            <div class="lists-cover">
+                                <img src="images/tortoarado 1.png" alt="">
+                            </div>
+                            <div class="lists-text">
+                                <p class="title">Infância</p>
+                                <p class="list-owner">por Vitória Araújo</p>
+                            </div>
                         </div>
-                        <div class="lists-text">
-                            <p class="title">Infância</p>
-                            <p class="list-owner">por Vitória Araújo</p>
+                    </a>
+                    </button>
+                    <button id="lista-butao"><a href="detail.html">
+                        <div class="list-book">
+                            <div class="lists-cover">
+                                <img src="images/tortoarado 1.png" alt="">
+                            </div>
+                            <div class="lists-text">
+                                <p class="title">Infância</p>
+                                <p class="list-owner">por Vitória Araújo</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="list-book">
-                        <div class="lists-cover">
-                            <img src="images/tortoarado 1.png" alt="">
-                        </div>
-                        <div class="lists-text">
-                            <p class="title">Infância</p>
-                            <p class="list-owner">por Vitória Araújo</p>
-                        </div>
-                    </div>
-                    <div class="list-book">
-                        <div class="lists-cover">
-                            <img src="images/tortoarado 1.png" alt="">
-                        </div>
-                        <div class="lists-text">
-                            <p class="title">Infância</p>
-                            <p class="list-owner">por Vitória Araújo</p>
-                        </div>
-                    </div>
+                    </a>
+                    </button>
                 </div>
             </div>
             <div class="container-bookSection">
@@ -163,5 +178,18 @@
             </div>
         </div>
     </div>
+    <script>
+        function showMenu() {
+            const menu = document.getElementById("list");
+
+            if (menu.style.display == 'none') {
+                list.style.display = 'flex';
+            }
+            else {
+                list.style.display = 'none';
+            }
+        }
+    </script>
 </body>
+
 </html>
