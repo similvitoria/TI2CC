@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 100%;
+    height: 100%;
+}
+
+.container-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 60px  0 0 72px;
+}
+
+#warn {
+    display: none;
+}
+
+.title {
+    color: #4C3F6E;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal; 
+}
+
+#colored-text {
+    color: #C46FC0;
+}
+
+.form-title p, .foot p, #warn, .text p {
+    color: #837E7E;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px; 
+    margin-top: 10px;
+}
+
+#underlined-text {
+    text-decoration-line: underline;
+    color: #4C3F6E;
+    cursor: pointer;
+}
+
+.form {
+    display: flex;
+    margin-top: 50px;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 85%;
+}
+
+.form-input {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form input {
+    flex-shrink: 0; 
+    appearance: none;
+	border: none;
+	outline: none;
+    border-bottom: 0.1px solid #e0dcdc;
+    color: rgba(131, 126, 126, 0.69);
+    font-size: 14px;
+    padding-bottom: 10px;
+}
+
+input:focus {
+    border-bottom: 1px solid #C46FC0;
+	background: rgba(#5196A6, .2);
+}
+
+
+.form-input span, .foot span{
+    color: rgba(131, 126, 126, 0.69);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    margin-top: 10px; /* 214.286% */ 
+}
+
+.form-button button, .button button {
+    width: 100%;
+    height: 48px;
+    flex-shrink: 0; 
+    border-radius: 15px;
+    background: #C46FC0; 
+    border: none;
+    color: white;
+    font-weight: bold;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition-duration: 1s;
+}
+
+.form-button button:hover , .button button:hover{
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    background-color: #852f80;
+}
+
+.password_req {
+    display: none;
+    font-size: 10px;
+}
+
+.foot  {
+    margin-top: 1.5rem;
+    font-size: 12px;
+}
+
+.container-market {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 71px 0 71px;
+    border-radius:  60px 0 0 60px;
+    width: 100%;
+    background-color: #C46FC0;
+}
+
+.market-logo {
+    display: flex;
+    justify-content: end;
+}
+
+.market-logo span {
+    color: #FFF;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px;
+    cursor: pointer;
+}
+
+.market-heading h1 {
+    color: #FFF;
+    font-size: 42px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal; 
+    padding-top: 30px;
+}
+
+.market-image img{
+    width: 110%;
+    flex-shrink: 0; 
+}
