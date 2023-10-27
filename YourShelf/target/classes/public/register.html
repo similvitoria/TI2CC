@@ -15,26 +15,26 @@
             <p>Já tem uma conta? <a href="login.html"><span id="underlined-text">Sign in</span></a></p>
         </div>
         <div class="form">
-            <form id="form" action="#">
+            <form id="form" action="/register" method="post">
                 <div class="form-input">
-                    <input id="input-first_name" type="text" value="Primeiro Nome">
+                    <input id="input-first_name" type="text" value="Primeiro Nome" name="first_name">
                     <p id="warn">Não pode estar vazio</p>
                 </div>
                 <div class="form-input">
-                    <input id="input-second_name" type="text" value="Segundo Nome">
+                    <input id="input-second_name" type="text" value="Segundo Nome" name ="last_name">
                     <p id="warn">Não pode estar vazio</p>
                 </div>
                 <div class="form-input">
-                    <input id="input-email" type="text" value="Email">
+                    <input id="input-email" type="text" value="Email" name="email">
                     <p id="warn">Não pode estar vazio</p>
                 </div>
                 <div class="form-input">
-                    <input  id="password_input" type="text" value="Senha">
+                    <input  id="password_input" type="text" value="Senha" name="password">
                     <p id="warn">Não pode estar vazio</p>
                     <span class="password_req" id="password_req1">Deve incluir ao menos 8 caracteres</span>
                 </div>
                 <div class="form-button">
-                    <button onclick="validatePassword()">Registrar</button>
+                    <button onclick="validatePassword()" type="submit">Registrar</button>
                 </div>
             </form>
         </div>
