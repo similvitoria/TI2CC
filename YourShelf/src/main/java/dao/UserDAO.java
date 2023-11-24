@@ -34,7 +34,7 @@ public class UserDAO extends DAO{
         try {
             Statement st = connection.createStatement();
             String query = "INSERT INTO usuarios (UserID, Email, Password, FirstName, SecondName) "
-                    + "VALUES ('"+user.getId()+ "', '" + user.getEmail() + "', '"
+                    + "VALUES ('"+user.getUserID()+ "', '" + user.getEmail() + "', '"
                     + user.getPassword() + "', '" + user.getFirstName() + "', '" + user.getSecondName() + "');";
             st.executeUpdate(query);
             st.close();
@@ -98,7 +98,7 @@ public class UserDAO extends DAO{
             Statement st = connection.createStatement();
             String query = "UPDATE usuarios SET Email = '" + user.getEmail() + "', Password = '"
                     + user.getPassword() + "', FirstName = '" + user.getFirstName() + "', SecondName = '" + user.getSecondName()+ "'"
-                    + " WHERE UserID = " + user.getId();
+                    + " WHERE UserID = " + user.getUserID();
             st.executeUpdate(query);
             st.close();
             status = true;

@@ -55,7 +55,7 @@
             <div class="lists-list">
                 <ul>
                     #foreach($list in $list)
-                    <li id="list-item"><span onclick="showLists()">$list.Name</span></li>
+                    <li id="list-item"><span onclick="showLists('$list.ListId')">$list.Name</span></li>
                     #end
                 </ul>
             </div>
@@ -109,20 +109,42 @@
                         <th scope="col">Trilha</th>
                       </tr>
                     </thead>
+                    <tbody id='books-list'>
+                    </tbody>
                   </table>
             </div>
         </div>
     </div>
 </main>
 <script>
-    function showLists() {
+    function showLists(listId) {
         var div = document.querySelector(".heading-text");
         div.style.display = 'none';
 
         var listDiv = document.querySelector(".list-info");
         listDiv.style.display ='flex';
-    }
+        window['books-list'].innerHTML = ''
 
+        const url = `http://0.0.0.0:4567/lists/${listId}/books`
+
+        fetch(url).then(response => {
+            response.json().then(books => {
+                const elements = books.map(book => {
+                    const author = book.author.join(',')
+                    return `
+                        <tr>
+                            <th>${book.title}</th>
+                            <th>${author}</th>
+                            <th>0%</th>
+                            <th>N/A</th>
+                        </tr>
+                    `
+                }).join('')
+                window['books-list'].innerHTML = elements
+            })
+        })
+    }
+    sessionStorage.setItem('user_id', "$user.UserID")
 </script>
 <script src="/script/jquery-3.6.3.slim.min.js"></script>
 <script type="module" src="/script/remove-btn.js"></script>

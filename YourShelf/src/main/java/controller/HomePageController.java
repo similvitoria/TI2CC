@@ -34,7 +34,7 @@ public class HomePageController {
         Template template = velocityEngine.getTemplate("src/main/resources/public/homePage.vm");
 
 
-        java.util.List<Lists> list = ListDAO.getAllLists(user.getId());
+        java.util.List<Lists> list = ListDAO.getAllLists(user.getUserID());
         context.put("list", list);
         context.put("user", user);
 
@@ -56,7 +56,7 @@ public class HomePageController {
 
         Lists list;
 
-        list = new Lists(id, list_name, user.getId());
+        list = new Lists(id, list_name, user.getUserID());
         listDAO.insert(list);
 
         System.out.println("inseriu" + list.toString());

@@ -26,7 +26,7 @@ public class ListController {
             bookDAO.insert(rawBookData, listId);
             System.out.println("inseriu" + rawBookData.toString());
         }
-        return null;
+        return resp;
     };
 
     public static Route getListsByUserId = (Request req, Response resp) -> {
@@ -34,8 +34,7 @@ public class ListController {
         List<Lists> lists = ListDAO.getAllLists(userId);
         resp.type("application/json");
         try {
-            resp.body(listsToJson(lists));
-            return resp;
+            return listsToJson(lists);
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
@@ -52,8 +51,20 @@ public class ListController {
         return resp;
     };
 
+    public static Route getBooksFromList = (Request req, Response resp) -> {
+        final String listId = req.params("listId");
+        final List<Book> books = BookDAO.getBooksByListId(listId);
+        resp.type("application/json");
+        return booksToJson(books);
+    };
+
     private static String listsToJson(List<Lists> lists) throws JsonProcessingException{
         final ObjectMapper mapper = new ObjectMapper();
         return mapper.writeValueAsString(lists); 
+    }
+
+    private static String booksToJson(List<Book> books) throws JsonProcessingException{
+        final ObjectMapper mapper = new ObjectMapper();
+        return mapper.writeValueAsString(books); 
     }
 }

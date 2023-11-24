@@ -49,7 +49,7 @@ public class User {
      *
      * @return unique ID of the user.
      */
-    public String getId() {
+    public String getUserID() {
         return UserID;
     }
 

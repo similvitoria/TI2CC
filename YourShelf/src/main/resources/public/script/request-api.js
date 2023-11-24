@@ -10,7 +10,8 @@ export async function search(bookNameForApi){
        if (response.status != 200) throw "was not possible to search";
        const json = await response.json();
        if (json.items === undefined) throw "there are no books";
-       catchBookInfos(json.items); 
+       const userLists = await getListsFromUser();
+       catchBookInfos(json.items, userLists); 
    } catch(error) {
        loadingIcon.removeClass("active");
        errorOnPage(error);
@@ -22,8 +23,20 @@ export async function insertBookInList(listId, book){
     try {
         const requestInfo = { method: "POST", body: JSON.stringify(book), url }
         const resposne = await fetch(url, requestInfo) 
-        console.log(resposne.status)
+        const status = resposne.status
+        return status == 200 || status == 201
     } catch (error) {
-        console.log(error)
+        console.error(error)
+        return false;
     }
+}
+
+export async function getListsFromUser(){
+    const userId = sessionStorage.getItem('user_id')
+    if(userId){
+        const url = `http://0.0.0.0:4567/lists/users/${userId}`
+        const response = await fetch(url)
+        return await response.json()
+    }
+    return []
 }

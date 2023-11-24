@@ -2,9 +2,11 @@ package dao;
 
 import java.sql.*;
 import java.util.List;
+import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 import model.Book;
+import model.Lists;
 
 public class BookDAO extends DAO{
     /**
@@ -30,7 +32,7 @@ public class BookDAO extends DAO{
 
             final List<String> authors = book.getAuthor().stream().map(author ->  author).collect(Collectors.toList());
             final String formatedAuthors = String.join(",", authors);
-            final String authorsFormattedQuery = "Array["+ formatedAuthors +"]";
+            final String authorsFormattedQuery = "Array{"+ formatedAuthors +"}";
             
             String query = "INSERT INTO livros (id, title, author, publisher, publishedDate, pagesNumber, imageLink, previewLink, description, listId) VALUES ('%s', '%s', '%s', '%s', '%s', %d, '%s', '%s', '%s', NULL)";
             query = String.format(query, book.getId(), book.getTitle(), authorsFormattedQuery, book.getPublisher(), book.getPublishedDate(), book.getPagesNumber(), book.getImageLink(), book.getPreviewLink(), book.getDescription()); 
@@ -55,9 +57,9 @@ public class BookDAO extends DAO{
         try {
             Statement st = connection.createStatement();
 
-            final List<String> authors = book.getAuthor().stream().map(author ->  author).collect(Collectors.toList());
+            final List<String> authors = book.getAuthor().stream().map(author ->  "\"" + author + "\"" ).collect(Collectors.toList());
             final String formatedAuthors = String.join(",", authors);
-            final String authorsFormattedQuery = "Array["+ formatedAuthors +"]";
+            final String authorsFormattedQuery = "{"+ formatedAuthors +"}";
 
             String query = "INSERT INTO livros (id, title, author, publisher, publishedDate, pagesNumber, imageLink, previewLink, description, listId) VALUES ('%s', '%s', '%s', '%s', '%s', %d, '%s', '%s', '%s', '%s')";
             query = String.format(query, book.getId(), book.getTitle(), authorsFormattedQuery, book.getPublisher(), book.getPublishedDate(), book.getPagesNumber(), book.getImageLink(), book.getPreviewLink(), book.getDescription(), listId); 
@@ -68,6 +70,43 @@ public class BookDAO extends DAO{
             throw new RuntimeException(u);
         }
         return status;
+    }
+
+    public static List<Book> getBooksByListId(String listId){
+        final List<Book> books = new ArrayList<>();
+        try {
+            Statement st = connection.createStatement();
+            String query = "select * from livros where listid = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, listId);
+
+            ResultSet rs = preparedStatement.executeQuery();
+
+            System.out.println(rs.toString());
+            while(rs.next()){
+                final List<String> authors = new ArrayList<>(); 
+                final ResultSet authorsComingFromDatabase = rs.getArray("author").getResultSet();
+                while(authorsComingFromDatabase.next()){
+                    authors.add(authorsComingFromDatabase.getString(2));
+                }
+                Book book = new Book(
+                    rs.getString("id"),
+                    rs.getString("title"),
+                    authors,
+                    rs.getString("publisher"),
+                    rs.getString("publisheddate"),
+                    rs.getInt("pagesnumber"),
+                    rs.getString("imagelink"),
+                    rs.getString("previewlink"),
+                    rs.getString("description")
+                );
+                books.add(book);
+            }
+            st.close();
+        } catch (SQLException u) {
+            throw new RuntimeException(u);
+        }
+        return books;
     }
 
     // /**

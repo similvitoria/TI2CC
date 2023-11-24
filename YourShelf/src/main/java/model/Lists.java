@@ -62,7 +62,7 @@ public class Lists {
      *
      * @return user select id.
      */
-    public String getUserId()
+    public String getId()
     {
         return UserID;
     }
