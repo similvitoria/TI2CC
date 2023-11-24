@@ -1,24 +1,24 @@
 import { loadingIcon, containerList } from "./components-page.js";
 import { insertOnPage } from "./insert-page.js";
-import { insertBookInList } from "./request-api.js"
 
-export function catchBookInfos(booksAllInfos){ 
-    booksAllInfos.forEach(listOfBookInfo => {
+export function catchBookInfos(booksAllInfos, userLists){ 
+    booksAllInfos.forEach((listOfBookInfo, idx) => {
         const book = createBookObject(listOfBookInfo.volumeInfo);
-        insertOnPage(book);
+        const addInListComponentsData = insertOnPage(book, userLists, idx);
         loaded();
+        addInListComponentsData.forEach(componentData => {
+            window[componentData.addBookInListBtnId].onclick = componentData.addBookInListFn
+            window[componentData.closeModalBtnId] = componentData.closeModalBtnFn
+        })
     })
     attachOnClickFunction();
 }
 
 function attachOnClickFunction(){
-    $("button[id|='add-book-btn']").each((_, btn) => {
+    $("button[class*='add-book-btn']").each((idx, btn) => {
         btn.onclick = () => {
-            const encodedBook = btn.attributes['data-book'].nodeValue
-            const book = JSON.parse(atob(encodedBook))
-            insertBookInList('22cc433c-963e-4483-8938-9fc0adcebae2', book).then(() => console.log())
+            window[`add-list-book-dialodg-${idx}`].showModal();
         }
-        console.log(btn)
     })
 }
 

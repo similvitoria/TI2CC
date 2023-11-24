@@ -556,3 +556,10 @@ table, th, td {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
+
+
+.add-book-in-list-item{
+    display: flex;
+    width: 100%;
+    background-color: red;
+}

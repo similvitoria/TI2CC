@@ -39,7 +39,7 @@ public class ListDAO extends DAO
             Statement st = connection.createStatement();
             String query = "INSERT INTO listas (ListID, Name, UserID) "
                     + "VALUES ('"+ list.getListId()+ "', '" + list.getName() + "', '"
-                    + list.getUserId() + "' );";
+                    + list.getId() + "' );";
             st.executeUpdate(query);
             st.close();
             status = true;

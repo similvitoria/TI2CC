@@ -11,7 +11,7 @@ public class Application {
     public static void main(String[] args) {
         staticFileLocation("/public");
 
-        get("/index", IndexController.getIndexPage);
+        get("/", IndexController.getIndexPage);
 
         get("/register", RegisterController.getRegisterPage);
 
@@ -27,7 +27,9 @@ public class Application {
 
         post("/lists/:listId/books", ListController.inserBookInList);
 
-        post("/lists/users/:userId", ListController.getListsByUserId);
+        get("/lists/:listId/books", ListController.getBooksFromList);
+
+        get("/lists/users/:userId", ListController.getListsByUserId);
 
         delete("/lists/books/:bookId", ListController.deleteBookFromList);
     }
