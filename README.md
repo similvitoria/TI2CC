@@ -4,15 +4,15 @@
 
 ### ☕ O semestre
 
-O semestre ainda ainda tá rolando e novas atualizações serão voltadas para as seguintes tarefas:
+O semestre terminou e as tarefas foram voltadas em:
 
 - [x] Integração Git
 - [x] Integração Postgres
 - [x] Integração Spark
 - [X] Computação em núvem
-- [ ] YourShelf- Front-End
-- [ ] YourShelf- Back-End
-- [ ] YourShelf- Projeto Final
+- [X] YourShelf- Front-End
+- [X] YourShelf- Back-End
+- [X] YourShelf- Projeto Final
 
 ### 💻 Tecnologias utilizadas
 
