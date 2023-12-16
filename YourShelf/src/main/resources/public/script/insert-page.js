@@ -15,6 +15,7 @@ export function insertOnPage(book, userLists, bookIdx) {
     previewLink,
   } = book;
   const addBookInListDialogId = `add-list-book-dialodg-${bookIdx}`;
+  const closeAddBookInListBtnId = `add-list-in-book-close-btn-${bookIdx}`
   const addInListComponentsData = [];
 
   searchResult.style.display = "flex";
@@ -45,19 +46,21 @@ export function insertOnPage(book, userLists, bookIdx) {
                     </button>
                 </li>`;
               addInListComponentsData.push({
-                btnId: addBookInListBtnId,
-                fn: async () => {
+                addBookInListBtnId: addBookInListBtnId,
+                addBookInListFn: async () => {
                   const isBookSaved = await insertBookInList(list.listId, book);
                   if (isBookSaved) {
                     alert("Livro salvo!");
                     window[addBookInListDialogId].close();
                   }
                 },
+                closeModalBtnId: closeAddBookInListBtnId,
+                closeModalBtnFn: () => window[addBookInListDialogId].close()
               });
               return html;
             })}
             </ul>
-            <button onclick="window.add-list-book-dialodg-${bookIdx}.close();" aria-label="close" class="x">❌</button>
+            <button id="${closeAddBookInListBtnId}" aria-label="close" class="x">❌</button>
         </dialog>
         </div>
         `);

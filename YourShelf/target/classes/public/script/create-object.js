@@ -8,7 +8,7 @@ export function catchBookInfos(booksAllInfos, userLists){
         loaded();
         addInListComponentsData.forEach(componentData => {
             window[componentData.addBookInListBtnId].onclick = componentData.addBookInListFn
-            window[componentData.closeModalBtnId] = componentData.closeModalBtnFn
+            window[componentData.closeModalBtnId].onclick = componentData.closeModalBtnFn
         })
     })
     attachOnClickFunction();
